@@ -7,24 +7,24 @@
  */
 size_t binary_tree_height_b(const binary_tree_t *tree)
 {
-    size_t left_height = 0;
-    size_t right_height = 0;
+	size_t left_height = 0;
+	size_t right_height = 0;
 
-    if (tree == NULL)
-    {
-        return (0);
-    }
-    else
-    {
-        if (tree)
-        {
-            // Calculate the height of the left and right subtrees
-            left_height = tree->left ? 1 + binary_tree_height_b(tree->left) : 1;
-            right_height = tree->right ? 1 + binary_tree_height_b(tree->right) : 1;
-        }
-        // Return the greater of the two subtree heights
-        return ((left_height > right_height) ? left_height : right_height);
-    }
+	if (tree == NULL)
+	{
+		return (0);
+	}
+	else
+	{
+		if (tree)
+		{
+			/* Calculate the height of the left and right subtrees */
+			left_height = tree->left ? 1 + binary_tree_height_b(tree->left) : 1;
+			right_height = tree->right ? 1 + binary_tree_height_b(tree->right) : 1;
+		}
+		/* Return the greater of the two subtree heights */
+		return ((left_height > right_height) ? left_height : right_height);
+	}
 }
 
 /**
@@ -34,18 +34,17 @@ size_t binary_tree_height_b(const binary_tree_t *tree)
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-    int right_height = 0, left_height = 0, balance_factor = 0;
+	int right_height = 0, left_height = 0, balance_factor = 0;
 
-    if (tree)
-    {
-        // Calculate the height of the left and right subtrees
-        left_height = (int)binary_tree_height_b(tree->left);
-        right_height = (int)binary_tree_height_b(tree->right);
+	if (tree)
+	{
+		/* Calculate the height of the left and right subtrees */
+		left_height = (int)binary_tree_height_b(tree->left);
+		right_height = (int)binary_tree_height_b(tree->right);
 
-        // Calculate the balance factor (difference in heights)
-        balance_factor = left_height - right_height;
-    }
+		/* Calculate the balance factor (difference in heights) */
+		balance_factor = left_height - right_height;
+	}
 
-    return (balance_factor);
+	return (balance_factor);
 }
-
