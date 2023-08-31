@@ -8,16 +8,12 @@
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
-    if (tree == NULL || func == NULL)
-        return;
+	if (tree == NULL || func == NULL)
+		return;
 
-    // Apply the function to the current node's value
-    func(tree->n);
+	/* Apply the function to the current node's value */
+	func(tree->n);
 
-    // Traverse the left subtree
-    binary_tree_preorder(tree->left, func);
-
-    // Traverse the right subtree
-    binary_tree_preorder(tree->right, func);
+	binary_tree_preorder(tree->left, func);
+	binary_tree_preorder(tree->right, func);
 }
-
