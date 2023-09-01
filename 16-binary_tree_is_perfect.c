@@ -9,30 +9,30 @@
  */
 int tree_is_perfect(const binary_tree_t *tree)
 {
-    int left_height = 0, right_height = 0;
+	int left_height = 0, right_height = 0;
 
-    if (tree->left && tree->right)
-    {
-        // Recursively calculate the height of the left and right subtrees
-        left_height = 1 + tree_is_perfect(tree->left);
-        right_height = 1 + tree_is_perfect(tree->right);
+	if (tree->left && tree->right)
+	{
+		/* Recursively calculate the height of the left and right subtrees */
+		left_height = 1 + tree_is_perfect(tree->left);
+		right_height = 1 + tree_is_perfect(tree->right);
 
-        // Check if the heights are the same and not zero
-        if (right_height == left_height && right_height != 0 && left_height != 0)
-            return (right_height);
+		/* Check if the heights are the same and not zero */
+		if (right_height == left_height && right_height != 0 && left_height != 0)
+			return (right_height);
 
-        return (0);
-    }
-    else if (!tree->left && !tree->right)
-    {
-        // Return 1 if the current node has no children
-        return (1);
-    }
-    else
-    {
-        // Return 0 if one child is missing and the other is present
-        return (0);
-    }
+		return (0);
+	}
+	else if (!tree->left && !tree->right)
+	{
+		/* Return 1 if the current node has no children */
+		return (1);
+	}
+	else
+	{
+		/* Return 0 if one child is missing and the other is present */
+		return (0);
+	}
 }
 
 /**
@@ -43,23 +43,22 @@ int tree_is_perfect(const binary_tree_t *tree)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-    int result = 0;
+	int result = 0;
 
-    if (tree == NULL)
-    {
-        return (0);
-    }
-    else
-    {
-        result = tree_is_perfect(tree);
-        
-        // Return 1 if tree_is_perfect returns a non-zero result, indicating a perfect tree
-        if (result != 0)
-        {
-            return (1);
-        }
-        
-        return (0);
-    }
+	if (tree == NULL)
+	{
+		return (0);
+	}
+	else
+	{
+		result = tree_is_perfect(tree);
+
+		/* Return 1 if tree_is_perfect returns a non-zero result means perfect */
+		if (result != 0)
+		{
+			return (1);
+		}
+
+		return (0);
+	}
 }
-
