@@ -2,7 +2,7 @@
 
 /**
  * binary_tree_rotate_left - Prints nodes in level-order traversal.
- * @tree: The root node of the binary tree 
+ * @tree: The root node of the binary tree
  * Return: Pointer to the newly created linked list node.
  */
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree)
